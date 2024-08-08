@@ -1,3 +1,4 @@
+
 body{
     font-family:'Times New Roman', Times, serif;
     margin: 0;
@@ -50,11 +51,43 @@ body{
     height: 250px;
  }
 
-.container{
-    display: grid;
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+background-color: rgb(218, 13, 13);
+color: white;
 }
 
-.filters{
-    /* grid-row: 2/6; */
-    grid-column: 1/2;
+.products {
+    grid-area: products;
+}
+
+.filter {
+    grid-area: filters;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.container {
+    display: grid;
+
+    @media(max-width :576px) {
+        grid-template-areas:
+            "navigation"
+            "filter"
+            "products"
+            "footer";
+    }
+
+    @media(min-width :576px) {
+        grid-template-areas:
+            "navigation navigation"
+            "filter products"
+            "footer footer";
+    }
 }
