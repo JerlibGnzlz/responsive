@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +6,11 @@
 
 .container {
     display: grid;
-    grid-template-areas: 
-    "nav"
-    "filters"
-    "products"
-    "footer";
+    grid-template-areas:
+        "nav"
+        "filters"
+        "products"
+        "footer";
     grid-template-columns: 1fr;
 }
 
@@ -29,6 +28,7 @@
     display: flex;
     list-style: none;
 }
+
 /*
 nav {
     background-color: #1A77A1;
@@ -52,49 +52,57 @@ nav {
 .navigation .logo {
     height: 100px;
 }
+
 /*
 header img {
     height: 10%;
     width: auto;
 }*/
 
-body{
-    font-family:'Times New Roman', Times, serif;
+/* body {
+    font-family: 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-}
-.filters{
+} */
+
+.filters {
+    grid-area: filters;
     padding: 0.1rem;
-    
+
 }
-.filters h2{
+
+.filters h2 {
     margin-left: 2rem;
     font-size: 2rem;
     margin-bottom: 0;
 }
 
-.filters li{
-    
+.filters li {
+
     list-style: none;
     margin-left: 2rem;
-    
+
 
 }
-.filters a{
+
+.filters a {
     text-decoration: none;
     color: black;
-    
+
 }
 
-  .products{
+
+.products {
+    grid-area: products;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
+    grid-template-columns: 1fr;
     row-gap: 1rem;
     margin-top: 5rem;
 
-  }
+}
 
- .product{
+.product {
     text-align: center;
     width: 450px;
     height: 350px;
@@ -104,11 +112,12 @@ body{
     -moz-box-shadow: 0px 1px 7px 0px rgb(76, 76, 76);
     box-shadow: 0px 1px 7px 0px rgb(76, 76, 76);
     margin: 0 auto;
- }
- .product img{
+}
+
+.product img {
     width: 400px;
     height: 250px;
- }
+}
 
 
 .footer {
@@ -116,26 +125,27 @@ body{
     display: flex;
     justify-content: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-background-color: rgb(218, 13, 13);
-color: white;
+    background-color: rgb(218, 13, 13);
+    color: white;
 }
 
-.products {
+/* .products {
     grid-area: products;
-}
+} */
 
-.filter {
+/* .filter {
     grid-area: filter;
-}
+} */
 
-.navigation {
+/* .navigation {
     grid-area: navigation;
-}
+} */
 
-.container {
+
+/* .container {
     display: grid;
 
-    @media(max-width :576px) {
+    @media(min-width :576px) {
         grid-template-areas:
             "navigation"
             "filter"
@@ -149,4 +159,19 @@ color: white;
             "filter products"
             "footer footer";
     }
+} */
+
+@media (min-width: 576px) {
+    .container {
+        grid-template-areas:
+            "nav nav"
+            "filters products"
+            "footer footer";
+        grid-template-columns: 1fr 3fr;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
