@@ -1,0 +1,39 @@
+.footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+background-color: rgb(218, 13, 13);
+color: white;
+}
+
+.products {
+    grid-area: products;
+}
+
+.filter {
+    grid-area: filters;
+}
+
+.navigation {
+    grid-area: navigation;
+}
+
+.container {
+    display: grid;
+
+    @media(max-width :576px) {
+        grid-template-areas:
+            "navigation"
+            "filter"
+            "products"
+            "footer";
+    }
+
+    @media(min-width :576px) {
+        grid-template-areas:
+            "navigation navigation"
+            "filter products"
+            "footer footer";
+    }
+}
